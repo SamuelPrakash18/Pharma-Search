@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: hbt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@postgres:5432/hbt
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_CONNECT_TIMEOUT: "10"
+      OLLAMA_READ_TIMEOUT: "600"
+      OLLAMA_GENERATE_READ_TIMEOUT: "900"
+      OLLAMA_TIMEOUT_RETRIES: "1"
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  pg_data:

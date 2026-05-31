@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+openpyxl
+sentence-transformers
+faiss-cpu
+pandas
+numpy
+streamlit

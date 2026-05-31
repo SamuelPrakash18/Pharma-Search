@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.deepeval/
+
+# Virtual environments
+ch/
+.venv/
+venv/
+env/
+
+# Node/Vite
+node_modules/
+dist/
+package-lock.json
+
+# Local environment and secrets
+.env
+.env.local
+.env*.local
+
+# Data files (large binary/indexed data)
+data/
+*.npy
+*.index
+*.pkl
+*.pickle
+medic.xlsx
+
+# OS/editor
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Runtime files
+*.log
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project-specific archives and artifacts
+archive/
+models/
+workflow/
+# Env files (ignore any env variants)
+.env.*

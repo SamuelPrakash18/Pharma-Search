@@ -1,4 +1,4 @@
-﻿Drug Search Bot 
+﻿# Drug Search Bot 
 
 This project is a drug-focused search and recommendation application.
 It provides semantic medicine search, similar-drug recommendations, and medicine detail lookup.
